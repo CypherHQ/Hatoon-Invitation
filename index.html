@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>دعوة خاصة لهتون 🤍✨</title>
 
+<!-- ✅ موسيقى Columbina's Lullaby - تشتغل تلقائي أول ما يدخل الموقع -->
+<audio autoplay loop>
+  <source src="https://files.catbox.moe/q36x4z.mp3" type="audio/mpeg">
+  متصفحك ما يدعم التشغيل التلقائي 🤍
+</audio>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
@@ -35,7 +41,6 @@ body {
     z-index: 1;
 }
 
-/* صورة القهوة - الخلفية الأولى */
 .bg-coffee {
     position: absolute;
     bottom: 0;
@@ -48,7 +53,6 @@ body {
     border: 2px solid rgba(255, 235, 210, 0.2);
 }
 
-/* صورة الأنمي - الخلفية الثانية */
 .bg-anime {
     position: absolute;
     top: 5%;
@@ -61,7 +65,6 @@ body {
     border: 2px solid rgba(255, 220, 200, 0.2);
 }
 
-/* صورة الديسكورد/الأجواء - الخلفية الثالثة */
 .bg-discord {
     position: absolute;
     bottom: 10%;
@@ -74,7 +77,6 @@ body {
     border: 2px solid rgba(200, 230, 255, 0.2);
 }
 
-/* صورة الكافيه/الهدوء - الخلفية الرابعة */
 .bg-cafe {
     position: absolute;
     top: 15%;
@@ -87,7 +89,6 @@ body {
     border: 2px solid rgba(230, 210, 190, 0.2);
 }
 
-/* صورة إضافية متحركة */
 .bg-extra {
     position: absolute;
     top: 40%;
@@ -178,7 +179,6 @@ body {
     border-color: rgba(250, 230, 210, 0.45);
 }
 
-/* تأثير الضوء الناعم */
 .card::after {
     content: '';
     position: absolute;
@@ -413,7 +413,7 @@ input[type="radio"]:hover {
     line-height: 1.9;
 }
 
-/* ===== تنسيق صفحة التفاصيل ===== */
+/* صفحة التفاصيل */
 .details-section {
     display: flex;
     flex-direction: column;
@@ -507,7 +507,6 @@ input[type="radio"]:hover {
     flex-wrap: wrap;
 }
 
-/* تنسيق الجوال */
 @media (max-width: 600px) {
     .card {
         padding: 30px 20px;
@@ -552,19 +551,10 @@ input[type="radio"]:hover {
 
 <!-- طبقات الخلفية - صورك الخاصة -->
 <div class="background-layer">
-    <!-- صورة القهوة الأولى -->
     <img class="bg-coffee" src="https://i.pinimg.com/736x/5b/2b/45/5b2b458cfc8ae8ed6271896f1f81cfe0.jpg" alt="Coffee">
-    
-    <!-- صورة الأنمي الثانية -->
     <img class="bg-anime" src="https://i.pinimg.com/1200x/7e/73/1b/7e731b7b83cd27126cf86415102d1bc9.jpg" alt="Anime">
-    
-    <!-- صورة الديسكورد/الأجواء الثالثة -->
     <img class="bg-discord" src="https://i.pinimg.com/736x/23/3d/de/233dde959470415ba1a70136dd3e4923.jpg" alt="Discord">
-    
-    <!-- صورة الكافيه/الهدوء الرابعة -->
     <img class="bg-cafe" src="https://i.pinimg.com/1200x/6d/a6/ab/6da6ab2d973272f48888e07477adcad5.jpg" alt="Cafe">
-    
-    <!-- صورة إضافية من نفس المجموعة (نفس صورة القهوة بتأثير مختلف) -->
     <img class="bg-extra" src="https://i.pinimg.com/736x/5b/2b/45/5b2b458cfc8ae8ed6271896f1f81cfe0.jpg" alt="Coffee Extra">
 </div>
 
