@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة خاصة لهتون 🤍✨</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(rgba(10, 5, 15, 0.75), rgba(25, 15, 25, 0.8)),
+                url('https://i.pinimg.com/736x/5b/2b/45/5b2b458cfc8ae8ed6271896f1f81cfe0.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: overlay;
+    direction: rtl;
+    text-align: center;
+    color: #f5efe9;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* طبقات الخلفية - صورك الخاصة */
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* صورة القهوة - الخلفية الأولى */
+.bg-coffee {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    opacity: 0.35;
+    animation: floatSlow 22s ease-in-out infinite;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255, 235, 210, 0.2);
+}
+
+/* صورة الأنمي - الخلفية الثانية */
+.bg-anime {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 320px;
+    opacity: 0.3;
+    animation: floatSlow 25s ease-in-out infinite reverse;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255, 220, 200, 0.2);
+}
+
+/* صورة الديسكورد/الأجواء - الخلفية الثالثة */
+.bg-discord {
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    width: 300px;
+    opacity: 0.25;
+    animation: floatSlow 28s ease-in-out infinite;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(200, 230, 255, 0.2);
+}
+
+/* صورة الكافيه/الهدوء - الخلفية الرابعة */
+.bg-cafe {
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    width: 300px;
+    opacity: 0.3;
+    animation: floatSlow 24s ease-in-out infinite reverse;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(230, 210, 190, 0.2);
+}
+
+/* صورة إضافية متحركة */
+.bg-extra {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 250px;
+    opacity: 0.2;
+    animation: floatSlow 30s ease-in-out infinite;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 200, 200, 0.15);
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(3deg); }
+}
+
+/* عناصر زخرفية متحركة */
+.floating-item {
+    position: fixed;
+    font-size: 34px;
+    color: rgba(255, 240, 225, 0.45);
+    z-index: 2;
+    pointer-events: none;
+    animation: float 9s ease-in-out infinite;
+    text-shadow: 0 0 15px rgba(255, 200, 200, 0.3);
+}
+
+.coffee1 { bottom: 15%; left: 8%; animation-delay: 0s; }
+.coffee2 { top: 18%; right: 12%; animation-delay: 2.5s; font-size: 42px; }
+.discord1 { top: 45%; left: 15%; animation-delay: 3.5s; font-size: 38px; }
+.discord2 { bottom: 30%; right: 18%; animation-delay: 1.5s; }
+.anime1 { top: 65%; left: 22%; animation-delay: 4.5s; font-size: 40px; }
+.anime2 { bottom: 45%; right: 28%; animation-delay: 2s; }
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,235,215,0.1) 0%, rgba(20,10,20,0.85) 100%);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.page {
+    display: none;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.active {
+    display: block;
+    animation: pageGlide 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes pageGlide {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.card {
+    background: rgba(25, 18, 25, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 45px 35px;
+    border-radius: 45px;
+    max-width: 650px;
+    margin: auto;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 0 2px rgba(220, 190, 170, 0.2);
+    border: 1px solid rgba(245, 225, 210, 0.3);
+    position: relative;
+    overflow: hidden;
+    color: #fdefe5;
+    transition: all 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 40px 70px rgba(0,0,0,0.7), 0 0 0 2px rgba(240, 200, 180, 0.35);
+    border-color: rgba(250, 230, 210, 0.45);
+}
+
+/* تأثير الضوء الناعم */
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,230,210,0.15) 0%, transparent 70%);
+    animation: rotate 22s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 36px;
+    color: #fff0e6;
+    text-shadow: 0 0 20px rgba(255, 210, 180, 0.5);
+    letter-spacing: 1.5px;
+}
+
+p {
+    line-height: 2.1;
+    font-size: 20px;
+    color: #fff5ef;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+button {
+    padding: 16px 42px;
+    margin: 12px;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 1.5px;
+}
+
+.accept {
+    background: linear-gradient(145deg, #b2917e, #836155);
+    color: white;
+    box-shadow: 0 8px 0 #533e36, 0 12px 35px rgba(178,145,126,0.5);
+    border: 1px solid rgba(255, 245, 235, 0.6);
+}
+
+.accept:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 0 #533e36, 0 18px 45px rgba(178,145,126,0.7);
+    background: linear-gradient(145deg, #c2a18e, #937166);
+}
+
+.accept::before {
+    content: '✨';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.accept:hover::before {
+    left: 18px;
+    opacity: 1;
+}
+
+.accept::after {
+    content: '✨';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.accept:hover::after {
+    right: 18px;
+    opacity: 1;
+}
+
+.reject {
+    background: rgba(65, 50, 55, 0.75);
+    backdrop-filter: blur(5px);
+    color: #f0e2da;
+    border: 1px solid rgba(220, 190, 170, 0.5);
+    box-shadow: 0 5px 0 #3f2f2c;
+}
+
+.reject:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #3f2f2c;
+    background: rgba(85, 65, 70, 0.85);
+    border-color: rgba(240, 210, 190, 0.7);
+}
+
+input[type="text"] {
+    padding: 15px 28px;
+    width: 70%;
+    margin-top: 15px;
+    border-radius: 60px;
+    border: 2px solid rgba(220, 190, 170, 0.5);
+    background: rgba(45, 35, 40, 0.85);
+    backdrop-filter: blur(5px);
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+    font-size: 18px;
+    color: #fff7f2;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #dbb8ae;
+    box-shadow: 0 0 0 5px rgba(219, 184, 174, 0.2);
+    outline: none;
+    transform: scale(1.02);
+    background: rgba(60, 45, 50, 0.9);
+}
+
+input[type="text"]::placeholder {
+    color: #e6cfc4;
+    opacity: 0.8;
+}
+
+input[type="radio"] {
+    margin-left: 12px;
+    accent-color: #dbb8ae;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.2s;
+}
+
+input[type="radio"]:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 8px rgba(219, 184, 174, 0.6));
+}
+
+.notification {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: linear-gradient(145deg, #ad8a7b, #786157);
+    color: white;
+    padding: 22px 55px;
+    border-radius: 70px;
+    display: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(255, 245, 235, 0.3);
+    font-size: 22px;
+    border: 1px solid rgba(255, 250, 240, 0.4);
+    font-weight: 700;
+    z-index: 1000;
+    white-space: nowrap;
+    backdrop-filter: blur(12px);
+    animation: popScale 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popScale {
+    0% { transform: translateX(-50%) scale(0); opacity: 0; }
+    80% { transform: translateX(-50%) scale(1.1); }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+.back-btn {
+    background: rgba(65, 55, 60, 0.55);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(220, 190, 170, 0.5);
+    color: #fff5ed;
+    font-size: 18px;
+    box-shadow: none;
+}
+
+.back-btn:hover {
+    background: rgba(90, 70, 75, 0.7);
+    border-color: rgba(240, 210, 190, 0.8);
+    transform: translateY(-3px);
+}
+
+.confirm-card {
+    background: rgba(55, 42, 48, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 40px;
+    border-right: 8px solid #d4aca0;
+    text-align: right;
+    box-shadow: inset 0 0 35px rgba(212, 172, 160, 0.2), 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.confirm-card p {
+    font-size: 24px;
+    margin: 22px 0;
+    color: #fff9f5;
+    font-weight: 600;
+}
+
+.heart-decoration {
+    color: #f0d5ca;
+    font-size: 36px;
+    letter-spacing: 18px;
+    margin: 35px 0;
+    animation: pulseGlow 3.5s ease-in-out infinite;
+    text-shadow: 0 0 25px rgba(240, 213, 202, 0.7);
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.8; text-shadow: 0 0 25px rgba(240, 213, 202, 0.6); }
+    50% { opacity: 1; text-shadow: 0 0 50px rgba(240, 213, 202, 1); }
+}
+
+.small-note {
+    font-size: 18px;
+    color: #fff3eb;
+    background: rgba(75, 58, 60, 0.65);
+    backdrop-filter: blur(6px);
+    padding: 22px;
+    border-radius: 35px;
+    border: 1px dashed #dbb8ae;
+    line-height: 1.9;
+}
+
+/* ===== تنسيق صفحة التفاصيل ===== */
+.details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 35px 0;
+    text-align: right;
+}
+
+.question-block {
+    background: rgba(55, 42, 48, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: 35px;
+    padding: 28px 32px;
+    border: 1px solid rgba(220, 190, 170, 0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: all 0.3s;
+}
+
+.question-block:hover {
+    background: rgba(70, 52, 58, 0.75);
+    border-color: rgba(240, 210, 190, 0.5);
+    transform: translateX(-6px);
+}
+
+.question-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff3ea;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid rgba(219, 184, 174, 0.45);
+    padding-bottom: 15px;
+}
+
+.question-title span {
+    font-size: 32px;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.option-item {
+    background: rgba(85, 65, 70, 0.6);
+    backdrop-filter: blur(4px);
+    padding: 14px 25px;
+    border-radius: 60px;
+    border: 1px solid rgba(219, 184, 174, 0.4);
+    transition: all 0.25s;
+    flex: 0 0 auto;
+}
+
+.option-item:hover {
+    background: rgba(110, 80, 85, 0.75);
+    border-color: rgba(250, 220, 200, 0.7);
+    transform: scale(1.04);
+}
+
+.option-item label {
+    margin: 0;
+    font-size: 19px;
+    color: #fff7f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.other-game-container {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.other-game-container input {
+    width: 65%;
+    margin-top: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق الجوال */
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .notification {
+        white-space: normal;
+        width: 85%;
+        font-size: 18px;
+        padding: 16px 25px;
+    }
+    
+    .bg-coffee, .bg-anime, .bg-discord, .bg-cafe, .bg-extra {
+        width: 180px;
+        opacity: 0.2;
+    }
+    
+    .options-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .option-item {
+        width: 100%;
+    }
+    
+    .other-game-container input {
+        width: 100%;
+    }
+    
+    .question-title {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- طبقات الخلفية - صورك الخاصة -->
+<div class="background-layer">
+    <!-- صورة القهوة الأولى -->
+    <img class="bg-coffee" src="https://i.pinimg.com/736x/5b/2b/45/5b2b458cfc8ae8ed6271896f1f81cfe0.jpg" alt="Coffee">
+    
+    <!-- صورة الأنمي الثانية -->
+    <img class="bg-anime" src="https://i.pinimg.com/1200x/7e/73/1b/7e731b7b83cd27126cf86415102d1bc9.jpg" alt="Anime">
+    
+    <!-- صورة الديسكورد/الأجواء الثالثة -->
+    <img class="bg-discord" src="https://i.pinimg.com/736x/23/3d/de/233dde959470415ba1a70136dd3e4923.jpg" alt="Discord">
+    
+    <!-- صورة الكافيه/الهدوء الرابعة -->
+    <img class="bg-cafe" src="https://i.pinimg.com/1200x/6d/a6/ab/6da6ab2d973272f48888e07477adcad5.jpg" alt="Cafe">
+    
+    <!-- صورة إضافية من نفس المجموعة (نفس صورة القهوة بتأثير مختلف) -->
+    <img class="bg-extra" src="https://i.pinimg.com/736x/5b/2b/45/5b2b458cfc8ae8ed6271896f1f81cfe0.jpg" alt="Coffee Extra">
+</div>
+
+<!-- عناصر متحركة -->
+<div class="floating-item coffee1">☕</div>
+<div class="floating-item coffee2">☕</div>
+<div class="floating-item discord1">💬</div>
+<div class="floating-item discord2">🎧</div>
+<div class="floating-item anime1">🌸</div>
+<div class="floating-item anime2">🎮</div>
+
+<div class="overlay"></div>
+
+<div class="notification" id="notification">
+💗 يبهتني رفضك! ترى الشوق مو طبيعي يا هتون 💗
+</div>
+
+<div class="page active" id="page1">
+<div class="card">
+<h1>🤍 إلى هتون 🤍</h1>
+<p>
+مشتاق لك من زماان، ودي أخصص لك أمسية تجمع كل الأشياء اللي تحبينها.<br><br>
+<span style="font-size: 30px;">☕ 🎮 💬 ✨</span><br>
+أدعوك يوم السبت في ليلة نرجع فيها ذكريات أول،<br>
+ونضحك ونسولف وننبسط على ديسكورد مع قهوتنا المفضلة 🤍✨<br><br>
+<span style="font-size: 24px; color: #ffdbcf;">حضورك يكمل الجو، وبدونك ما تنلذ 🤍</span>
+</p>
+<button class="accept" onclick="goToPage(2)">أكيييد بحضر 🥺💌</button>
+<button class="reject" onclick="showNotification()">رفض</button>
+</div>
+</div>
+
+<!-- صفحة التفاصيل -->
+<div class="page" id="page2">
+<div class="card">
+<h1>✨ خلنا نضبط التفاصيل ✨</h1>
+<p style="font-size:23px; color:#ffebe0; margin-bottom: 15px;">عشان السهرة تكون على مزاجك 💗</p>
+
+<div class="details-section">
+    
+    <!-- السؤال الأول: الوقت -->
+    <div class="question-block">
+        <div class="question-title">
+            <span>🕒</span> متى يناسبك يوم السبت؟
+        </div>
+        <div class="options-container">
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="time" value="العصر 🌤️"> العصر 🌤️
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="time" value="المغرب 🌇"> المغرب 🌇
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="time" value="العشاء 🌙"> العشاء 🌙
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <!-- السؤال الثاني: اللعبة -->
+    <div class="question-block">
+        <div class="question-title">
+            <span>🎮</span> وش نلعب أول؟
+        </div>
+        <div class="options-container">
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="game" value="اوفر واتش"> اوفر واتش
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="game" value="مارفل"> مارفل
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="game" value="فالورانت"> فالورانت
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="game" value="أخرى"> لعبة ثانية
+                </label>
+            </div>
+        </div>
+        <div class="other-game-container">
+            <input type="text" id="otherGame" placeholder="اكتبي اسم اللعبة هنا...">
+        </div>
+    </div>
+    
+    <!-- السؤال الثالث: الأجواء -->
+    <div class="question-block">
+        <div class="question-title">
+            <span>🌸</span> الأجواء اللي تحبينها:
+        </div>
+        <div class="options-container">
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="mood" value="هادية ☕✨"> هادية وراقية ☕✨
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="mood" value="ضحك ومرح 😂🎉"> ضحك ومرح 😂🎉
+                </label>
+            </div>
+            <div class="option-item">
+                <label>
+                    <input type="radio" name="mood" value="تحدي 🔥🎮"> تحدي حماااسي 🔥
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="button-container">
+    <button class="accept" onclick="saveAnswers()">تمام، نكمل ✨</button>
+    <button class="back-btn" onclick="goToPage(1)">رجوع</button>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page3">
+<div class="card">
+<h1>🎟️ بطاقة حضور خاص 🎟️</h1>
+<div class="confirm-card">
+<p><strong>🗓️ اليوم:</strong> السبت</p>
+<p><strong>⏰ الوقت:</strong> <span id="confirmTime"></span></p>
+<p><strong>🎯 اللعبة:</strong> <span id="confirmGame"></span></p>
+<p><strong>✨ الأجواء:</strong> <span id="confirmMood"></span></p>
+</div>
+
+<div class="heart-decoration">🤍 ✦ 🤍 ✦ 🤍</div>
+
+<p class="small-note">
+📸 خلصتي؟ صوري البطاقة وأرسليها لي عشان يكون تأكيد نهائي<br>
+ونجهز القهوة ونفتح الديسكورد 🤍☕🎮
+</p>
+
+<button class="back-btn" onclick="goToPage(2)">تعديل بسيط</button>
+<button class="accept" onclick="goToPage(1)" style="background: #8f6f63;">تم 🤍</button>
+</div>
+</div>
+
+<script>
+function goToPage(pageNumber) {
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    document.getElementById("page" + pageNumber).classList.add("active");
+}
+
+function showNotification() {
+    const notif = document.getElementById("notification");
+    notif.style.display = "block";
+    setTimeout(() => {
+        notif.style.animation = 'popScale 0.3s reverse';
+        setTimeout(() => {
+            notif.style.display = "none";
+            notif.style.animation = 'popScale 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+        }, 280);
+    }, 2800);
+}
+
+function saveAnswers() {
+    let time = document.querySelector('input[name="time"]:checked');
+    let game = document.querySelector('input[name="game"]:checked');
+    let mood = document.querySelector('input[name="mood"]:checked');
+    let otherGame = document.getElementById("otherGame").value.trim();
+
+    if (!time || !game || !mood) {
+        alert("يا حلو، اختاري الخيارات عشان نكمل 😊🤍");
+        return;
+    }
+
+    let selectedGame = game.value;
+    if (game.value === "أخرى" && otherGame !== "") {
+        selectedGame = otherGame;
+    } else if (game.value === "أخرى" && otherGame === "") {
+        alert("يا هتون اكتبي اسم اللعبة 🎮");
+        return;
+    }
+
+    document.getElementById("confirmTime").innerText = time.value;
+    document.getElementById("confirmGame").innerText = selectedGame;
+    document.getElementById("confirmMood").innerText = mood.value;
+
+    goToPage(3);
+}
+</script>
+
+</body>
+</html>
